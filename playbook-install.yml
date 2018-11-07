@@ -28,6 +28,19 @@
         - supervisor
         - logrotate
 
+    - name: Adding pmm group
+      group:
+        name: pmm
+        gid: 1000
+        state: present
+
+    - name: Adding pmm user
+      user:
+        name: pmm
+        uid: 1000
+        groups: pmm
+        append: yes
+
     - name: cloud-init                 | Create dirs
       file: path={{ item }} state=directory
       with_items:
