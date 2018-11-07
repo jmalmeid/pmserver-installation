@@ -16,6 +16,30 @@
         dest: /etc/nginx/nginx.conf
         line: 'daemon off;'
 
+    - name: NGINX                      | Copy pmm.conf
+      copy:
+        src: config/pmm.conf
+        dest: /etc/nginx/conf.d/pmm.conf
+        owner: nginx
+        group: nginx
+        mode: 0644
+
+    - name: NGINX                      | Copy pmm-ssl.conf
+      copy:
+        src: config/pmm-ssl.conf
+        dest: /etc/nginx/conf.d/pmm-ssl.conf
+        owner: nginx
+        group: nginx
+        mode: 0644
+
+    - name: SUPERVISORD                      | Copy pmm.ini
+      copy:
+        src: config/pmm.ini
+        dest: /etc/supervisord.d/pmm.ini
+        owner: nginx
+        group: nginx
+        mode: 0644
+
     - name: NGINX                      | Disable password-page
       replace:
         dest: /etc/nginx/conf.d/pmm.conf
@@ -43,7 +67,7 @@
     - name: Start service supervisord, if not started
       service:
         name: supervisord
-        state: started
+        state: restarted
         enabled: yes
         
     - name: PMM                        | Wait for mysqld start
