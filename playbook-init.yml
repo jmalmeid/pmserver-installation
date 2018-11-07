@@ -31,8 +31,19 @@
         owner: nginx
         group: nginx
         mode: 0644
+        
+    - name: SUPERVISORD                 | Copy service
+      copy:
+        src: config/supervisord.service
+        dest: /usr/lib/systemd/system/supervisord.service
+        owner: root
+        group: root
+        mode: 0644        
 
-    - name: SUPERVISORD                      | Copy pmm.ini
+    - name: system                 | daemon-reload
+      systemd: daemon_reload=yes
+  
+    - name: SUPERVISORD                  | Copy pmm.ini
       copy:
         src: config/pmm.ini
         dest: /etc/supervisord.d/pmm.ini
