@@ -40,9 +40,12 @@
         option: enable_gzip
         value: true
 
-    - name: PMM                        | Start services
-      shell: supervisord -c /etc/supervisord.conf &
-
+    - name: Start service supervisord, if not started
+      service:
+        name: supervisord
+        state: started
+        enabled: yes
+        
     - name: PMM                        | Wait for mysqld start
       wait_for:
         port: 3306
