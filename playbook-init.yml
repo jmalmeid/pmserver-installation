@@ -69,6 +69,7 @@
         name: supervisord
         state: restarted
         enabled: yes
+        no_block: yes
         
     - name: PMM                        | Wait for mysqld start
       wait_for:
