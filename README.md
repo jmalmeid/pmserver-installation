@@ -11,4 +11,5 @@ Instalation PMM Server Standalone
  git clone https://github.com/jmalmeid/pmserver-installation.git <br/>
 
 ### 3 - Run Playbook install
-ansible-playbook <br/>
+ ansible-playbook pmserver-installation/playbook-install.yml <br/>
+ ansible-playbook pmserver-installation/playbook-init.yml <br/>
