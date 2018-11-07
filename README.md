@@ -10,5 +10,5 @@ yum install ansible git
 ### 2 - Get Repository
 git clone https://github.com/jmalmeid/pmserver-installation.git
 
-##3 - Run Playbook install
+### 3 - Run Playbook install
 ansible-playbook 
