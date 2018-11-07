@@ -4,7 +4,7 @@ Instalation PMM Server Standalone
 ## Instrucciones
 
 ### 1 - Installation of Ansible
- yum install epel-release-latest-7 <br/>
+ yum install epel-release <br/>
  yum install ansible git <br/>
 
 ### 2 - Get Repository
