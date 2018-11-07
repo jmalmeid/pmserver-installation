@@ -64,7 +64,7 @@
         option: enable_gzip
         value: true
 
-    - name: Start service supervisord, if not started
+    - name: SUPERVISORD                    | Restart service
       service:
         name: supervisord
         state: restarted
