@@ -2,6 +2,12 @@
 
 set -o errexit
 
+#Installation
+if [ ! -d /var/lib/mysql ]; then
+    ansible-playbook /opt/playbook-install.yaml
+    ansible-playbook /opt/playbook-init.yaml
+fi
+
 # Add logging
 if [ -n "${ENABLE_DEBUG}" ]; then
     set -o xtrace
