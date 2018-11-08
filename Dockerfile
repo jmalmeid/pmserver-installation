@@ -1,10 +1,13 @@
 FROM centos:7
 
 RUN yum -y install epel-release && \
-    yum -y install glibc curl telnet net-tools && \
+    yum -y install ansible glibc curl telnet net-tools && \
     yum -y update
 
-COPY playbook-install.yaml 
+COPY playbook-install.yaml $HOME/
+COPY playbook-init.yaml $HOME/
 
-RUN an
+USER root
+EXPOSE 443
+
 
