@@ -1,5 +1,6 @@
 # pmserver-instalattion
 Instalation PMM Server Standalone
+More information https://www.percona.com/doc/percona-monitoring-and-management/deploy/index.html
 
 ## Instrucciones
 
